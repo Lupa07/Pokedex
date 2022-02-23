@@ -6,47 +6,68 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
-         body{
-             margin-top: 15px;
-             background: url('https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/pokemon/detective-pikachu.jpg');
-           overflow: hidden;
-       }
-       .logo{
-        display: block;
-        margin: auto;
-        margin-bottom: 20px;
-        width: 550px;
-        height: 250px;
-       }
-       .contenedor{
-           text-align: center;
-           margin: 0 auto;
-           height: 300px;
-           width: 350px;
-           display: flex;
-           justify-content: center;
-           align-content: center;
-           flex-direction: column;
-       }
-       .contenedor input{
-           text-align: center;
-       }
+        body{
+            margin-top: 15px;
+            background-image:url('fondo.jpg');
+            
+          overflow: hidden;
+      }
+      .logo{
+       display: block;
+      margin-top: -125px;
+      margin-left: 650px;
+       width: 600px;
+       height: 225px;
+      }
+      .contenedor{
+          z-index: 2;
+          text-align: left;
+          margin: 0 auto;
+          height: 300px;
+          width: 350px;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-direction: column;
+      }
+      input{
+         position:absolute ;
+         margin-top: 200px;
+         margin-left: 370px;
+          text-align: center;
+         
+      }
+      #button{
+       position:absolute ;
+         margin-left: 430px;
+         margin-top: 290px;
+          text-align: center;
+      }
       
-       .pokemon{
-           width: 150px;
-           height: 150px;
-           margin: 40px auto;
-           display: inline-block;
-       }
-       #aBuscar{
-           
-        background-color: #81bd2d;
-         color: #467702;
-          border: 1px solid #db0101;
-       }
-       p{
-           margin-top: -60px;
-       }
+     
+      .pokemon{
+          width: 150px;
+          height: 150px;
+          margin: 40px auto;
+          display: inline-block;
+      }
+      #aBuscar{
+          
+       background-color: #3d5a1400;
+        color: #467702;
+         border: 1px solid #db0101;
+      }
+      p{
+          margin-top: -80px;
+          margin-left: -140px;
+          
+      }
+      #img{
+          margin-top: 200px;
+          margin-left: -100px;
+      }
+      
+      
     </style>
 </head>
 <body>
@@ -54,8 +75,8 @@
 </div>
 <img src="logo2.png" class="logo" alt="">
 <div class="contenedor">
-    <form method="post" id="formulario" name="formulario"></form>
-    <input type="text" id="aBuscar"  placeholder="Ingrese Un Id o Nombre para buscar el Pokemon"><br>
+    
+    <input type="text" id="aBuscar"  placeholder="Id o Nombre Pokemon"><br>
     <button class="text-white btn bg-danger" id="button">Buscar</button><br>
     <img src="pokeball.png" id="img" class="pokemon" alt="">
     <p id="info" class="text-white"></p>
