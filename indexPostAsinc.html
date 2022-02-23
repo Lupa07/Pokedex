@@ -54,6 +54,7 @@
 </div>
 <img src="logo2.png" class="logo" alt="">
 <div class="contenedor">
+    <form method="post" id="formulario" name="formulario"></form>
     <input type="text" id="aBuscar"  placeholder="Ingrese Un Id o Nombre para buscar el Pokemon"><br>
     <button class="text-white btn bg-danger" id="button">Buscar</button><br>
     <img src="pokeball.png" id="img" class="pokemon" alt="">
@@ -62,26 +63,28 @@
     <script>
         let buton=document.getElementById('button')
 
+       
         buton.addEventListener('click',()=>{
             let aBuscar=document.getElementById('aBuscar').value
+            let formulario=new FormData(document.getElementById('formulario'));
             let img=document.getElementById('img')
             let p=document.getElementById('info')
             let xhttp=new XMLHttpRequest()
-            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${aBuscar}`,false)
-            xhttp.send()
-            
-            if(xhttp.readyState==4 && xhttp.status==200){
+            xhttp.open("POST",`https://pokeapi.co/api/v2/pokemon/${aBuscar}`,false);
+            xhttp.send(formulario)
 
+            
+                if(xhttp.status==200)
+                {
                 let datoPokemon=JSON.parse( xhttp.responseText)
                 console.log(datoPokemon)
                 img.setAttribute("src",datoPokemon.sprites.front_default)
                 p.textContent="Nombre: "+datoPokemon.name+'\n Id: '+datoPokemon.id+'\n Tipo: ' +datoPokemon.types[0].type.name
-            }
-        }
-
-        )
-
-        /*La diferencia principal es que en la busqueda Sincrona, la web quedará paralizada en la linea 73 hasta que el estado de la misma coincida con la condicion de IF*/
+                }
+            
+            
+        })
+        
     </script>
 
 </body>

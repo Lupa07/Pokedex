@@ -8,7 +8,7 @@
     <style>
          body{
              margin-top: 15px;
-           background-color: rgba(105, 105, 105, 0.596);
+             background: url('https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/pokemon/detective-pikachu.jpg');
            overflow: hidden;
        }
        .logo{
@@ -38,7 +38,7 @@
            margin: 40px auto;
            display: inline-block;
        }
-       #caja{
+       #aBuscar{
            
         background-color: #81bd2d;
          color: #467702;
@@ -54,7 +54,7 @@
 </div>
 <img src="logo2.png" class="logo" alt="">
 <div class="contenedor">
-    <input type="text" id="caja"  placeholder="Ingrese Un Id o Nombre para buscar el Pokemon"><br>
+    <input type="text" id="aBuscar"  placeholder="Ingrese Un Id o Nombre para buscar el Pokemon"><br>
     <button class="text-white btn bg-danger" id="button">Buscar</button><br>
     <img src="pokeball.png" id="img" class="pokemon" alt="">
     <p id="info" class="text-white"></p>
@@ -63,11 +63,11 @@
         let buton=document.getElementById('button')
 
         buton.addEventListener('click',()=>{
-            let caja=document.getElementById('caja').value
+            let aBuscar=document.getElementById('aBuscar').value
             let img=document.getElementById('img')
             let p=document.getElementById('info')
             let xhttp=new XMLHttpRequest()
-            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${caja}`,true)
+            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${aBuscar}`,true)
             xhttp.send()
 
             xhttp.onreadystatechange=function () {
